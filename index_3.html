@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="StruceFlow: Outbound email agency helping CRM agencies generate predictable conversations. 10+ interested conversations in 30 days or full refund.">
+    <meta name="theme-color" content="#FFFFFF">
+    <title>StruceFlow | Outbound Email for CRM Agencies</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #FFFFFF;
+            color: #1A1A1A;
+            line-height: 1.6;
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 1.5rem;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        h4 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        a {
+            color: #2563EB;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Container */
+        .container {
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                padding: 0 2rem;
+                max-width: 1200px;
+            }
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background-color: #FFFFFF;
+            border-bottom: 1px solid #E5E7EB;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1A1A1A;
+            text-decoration: none;
+        }
+
+        .logo:hover {
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #1A1A1A;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #2563EB;
+            text-decoration: none;
+        }
+
+        .nav-cta {
+            padding: 0.5rem 1rem;
+            background-color: #2563EB;
+            color: #FFFFFF;
+            border-radius: 0.375rem;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background-color: #1D4ED8;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.75rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 0;
+        }
+
+        .divider {
+            height: 1px;
+            background-color: #E5E7EB;
+            margin: 4rem 0;
+        }
+
+        /* Grid */
+        .grid {
+            display: grid;
+            gap: 3rem;
+        }
+
+        .grid-2 {
+            grid-template-columns: 1fr;
+        }
+
+        @media (min-width: 1024px) {
+            .grid-2 {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .grid-3 {
+            grid-template-columns: 1fr;
+        }
+
+        @media (min-width: 768px) {
+            .grid-3 {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .items-center {
+            align-items: center;
+        }
+
+        /* Buttons */
+        button, .btn {
+            padding: 0.75rem 2rem;
+            background-color: #2563EB;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
+        button:hover, .btn:hover {
+            background-color: #1D4ED8;
+            text-decoration: none;
+        }
+
+        .btn-full {
+            width: 100%;
+            padding: 0.75rem;
+        }
+
+        /* Forms */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #1A1A1A;
+            margin-bottom: 0.5rem;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #E5E7EB;
+            border-radius: 0.375rem;
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #2563EB;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 8rem;
+        }
+
+        /* Colors */
+        .text-primary {
+            color: #2563EB;
+        }
+
+        .text-muted {
+            color: #6B7280;
+        }
+
+        .bg-secondary {
+            background-color: #F3F4F6;
+        }
+
+        .border {
+            border: 1px solid #E5E7EB;
+        }
+
+        .border-2 {
+            border: 2px solid #2563EB;
+        }
+
+        /* Cards */
+        .card {
+            background-color: #FFFFFF;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            border: 1px solid #E5E7EB;
+        }
+
+        /* Images */
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+        }
+
+        .founder-img {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        /* Flex */
+        .flex {
+            display: flex;
+        }
+
+        .flex-col {
+            flex-direction: column;
+        }
+
+        .gap-4 {
+            gap: 1rem;
+        }
+
+        .gap-8 {
+            gap: 2rem;
+        }
+
+        .gap-12 {
+            gap: 3rem;
+        }
+
+        .items-start {
+            align-items: flex-start;
+        }
+
+        /* Spacing */
+        .mb-4 {
+            margin-bottom: 1rem;
+        }
+
+        .mb-6 {
+            margin-bottom: 1.5rem;
+        }
+
+        .mb-8 {
+            margin-bottom: 2rem;
+        }
+
+        .mb-12 {
+            margin-bottom: 3rem;
+        }
+
+        .mt-2 {
+            margin-top: 0.5rem;
+        }
+
+        .mt-6 {
+            margin-top: 1.5rem;
+        }
+
+        .mt-8 {
+            margin-top: 2rem;
+        }
+
+        .py-20 {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
+
+        .pt-32 {
+            padding-top: 8rem;
+        }
+
+        .p-8 {
+            padding: 2rem;
+        }
+
+        /* Max Width */
+        .max-w-2xl {
+            max-width: 42rem;
+        }
+
+        .max-w-md {
+            max-width: 28rem;
+        }
+
+        /* Text Alignment */
+        .text-center {
+            text-align: center;
+        }
+
+        /* Lists */
+        ul {
+            list-style: none;
+        }
+
+        li {
+            margin-bottom: 0.75rem;
+        }
+
+        /* Numbers */
+        .number-step {
+            font-size: 4rem;
+            font-weight: 700;
+            color: #2563EB;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #F3F4F6;
+            border-top: 1px solid #E5E7EB;
+            margin-top: 5rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .footer-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .footer-divider {
+            border-top: 1px solid #E5E7EB;
+            padding-top: 2rem;
+            margin-top: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            section {
+                padding: 3rem 0;
+            }
+
+            .divider {
+                margin: 2rem 0;
+            }
+
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .number-step {
+                font-size: 3rem;
+            }
+        }
+
+        /* Utility: Space between */
+        .space-y-2 > * + * {
+            margin-top: 0.5rem;
+        }
+
+        .space-y-3 > * + * {
+            margin-top: 0.75rem;
+        }
+
+        .space-y-4 > * + * {
+            margin-top: 1rem;
+        }
+
+        .space-y-6 > * + * {
+            margin-top: 1.5rem;
+        }
+
+        /* Toast notifications */
+        .toast {
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+            padding: 1rem 1.5rem;
+            background-color: #10B981;
+            color: #FFFFFF;
+            border-radius: 0.375rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            animation: slideIn 0.3s ease-out;
+            z-index: 1000;
+        }
+
+        .toast.error {
+            background-color: #EF4444;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .flex-shrink-0 {
+            flex-shrink: 0;
+        }
+
+        .leading-relaxed {
+            line-height: 1.75;
+        }
+
+        .font-semibold {
+            font-weight: 600;
+        }
+
+        .font-medium {
+            font-weight: 500;
+        }
+
+        .font-bold {
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#home" class="logo">StruceFlow</a>
+                <ul class="nav-links">
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#form" class="nav-cta">Get Started</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="pt-32">
+            <div class="container">
+                <div class="grid grid-2 items-center">
+                    <div class="fade-in" style="grid-column: 1 / -1;">
+                        <h1>Predictable Outbound Conversations for CRM Agencies</h1>
+                        <p class="text-muted" style="font-size: 1.125rem; margin-bottom: 2rem; line-height: 1.8;">We build outbound email systems that generate 10+ interested conversations in 30 days.<br><br>No fluff. No SDR hiring. Just qualified prospects in your inbox.</p>
+                        <a href="#form" class="btn">Get Your Custom Breakdown</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Problem Section -->
+        <section>
+            <div class="container">
+                <div class="max-w-2xl">
+                    <p class="text-muted" style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 1.5rem;">CRM agencies are great at delivering for clients — but their own pipeline often depends too heavily on referrals.</p>
+                    <p class="text-muted" style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 1.5rem;">That creates inconsistent revenue and constant pressure to find the next deal.</p>
+                    <p class="text-muted" style="font-size: 1.125rem; line-height: 1.8;">Outbound works — but setting it up properly takes time most agencies don't have.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Solution Section -->
+        <section>
+            <div class="container">
+                <h2>We handle the entire outbound engine.<br>You focus on closing.</h2>
+                <div class="max-w-2xl" style="margin-top: 2rem;">
+                    <ul class="space-y-3">
+                        <li class="flex gap-4 items-start">
+                            <span class="text-primary font-bold flex-shrink-0" style="font-size: 1.25rem;">•</span>
+                            <span class="text-muted">Define your ideal client profile</span>
+                        </li>
+                        <li class="flex gap-4 items-start">
+                            <span class="text-primary font-bold flex-shrink-0" style="font-size: 1.25rem;">•</span>
+                            <span class="text-muted">Source decision-makers</span>
+                        </li>
+                        <li class="flex gap-4 items-start">
+                            <span class="text-primary font-bold flex-shrink-0" style="font-size: 1.25rem;">•</span>
+                            <span class="text-muted">Build and test email sequences</span>
+                        </li>
+                        <li class="flex gap-4 items-start">
+                            <span class="text-primary font-bold flex-shrink-0" style="font-size: 1.25rem;">•</span>
+                            <span class="text-muted">Launch and manage campaigns</span>
+                        </li>
+                        <li class="flex gap-4 items-start">
+                            <span class="text-primary font-bold flex-shrink-0" style="font-size: 1.25rem;">•</span>
+                            <span class="text-muted">Deliver interested conversations</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
+
+        <div class="divider"></div>
+
+        <!-- Guarantee Section -->
+        <section class="bg-secondary py-20">
+            <div class="container">
+                <div class="max-w-2xl">
+                    <h2 style="margin-bottom: 1.5rem;">10 interested conversations in 30 days — or full refund.</h2>
+                    <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 1.5rem;">An "interested conversation" means a qualified prospect who replies expressing intent to learn more about your service.</p>
+                    <p style="font-size: 1.125rem; line-height: 1.8;">Simple. Clear. No inflated metrics.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Form Section -->
+        <section id="form">
+            <div class="container">
+                <div class="max-w-2xl">
+                    <h2>Get Your Custom Outbound Breakdown</h2>
+                    <p class="text-muted" style="margin-bottom: 3rem;">Submit your details and we'll send a short Loom showing exactly how outbound could work for your agency.</p>
+
+                    <form id="breakdownForm" name="breakdown" method="POST" data-netlify="true">
+                        <input type="hidden" name="form-name" value="breakdown">
+                        <!-- Form is configured for Netlify Forms. Submissions are automatically captured and emailed to your account. -->
+
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" name="name" placeholder="Your name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="agencyName">Agency Name *</label>
+                            <input type="text" id="agencyName" name="agencyName" placeholder="Your agency name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="website">Website</label>
+                            <input type="url" id="website" name="website" placeholder="https://youragency.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="revenueRange">Annual Revenue Range</label>
+                            <select id="revenueRange" name="revenueRange">
+                                <option value="">Select range</option>
+                                <option value="under-500k">Under $500K</option>
+                                <option value="500k-1m">$500K - $1M</option>
+                                <option value="1m-5m">$1M - $5M</option>
+                                <option value="5m-10m">$5M - $10M</option>
+                                <option value="over-10m">Over $10M</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="currentLeadSource">Current Lead Source</label>
+                            <input type="text" id="currentLeadSource" name="currentLeadSource" placeholder="e.g., Referrals, LinkedIn, Inbound">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="dealSize">Average Deal Size</label>
+                            <input type="text" id="dealSize" name="dealSize" placeholder="e.g., $15K - $50K">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                        </div>
+
+                        <button type="submit" class="btn btn-full">Send Me the Breakdown</button>
+                    </form>
+
+                    <p class="text-muted" style="font-size: 0.75rem; margin-top: 1.5rem;">We'll send your custom Loom within 24 hours. No spam, no sales call unless you ask for one.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Services Section -->
+        <section id="services">
+            <div class="container">
+                <h2>What We Do</h2>
+                <p class="text-muted max-w-2xl" style="margin-bottom: 3rem;">We handle the entire outbound email engine. You focus on what you do best: closing deals and delivering results for your clients.</p>
+
+                <h2 style="font-size: 1.75rem; margin-bottom: 3rem;">What We Handle</h2>
+                <div class="grid grid-2">
+                    <div class="fade-in">
+                        <h3>ICP Definition</h3>
+                        <p class="text-muted" style="margin-bottom: 1rem;">We analyze your best clients to build a detailed ideal customer profile. We identify:</p>
+                        <ul class="space-y-2">
+                            <li class="text-muted">• Company size and industry</li>
+                            <li class="text-muted">• Key pain points</li>
+                            <li class="text-muted">• Budget indicators</li>
+                            <li class="text-muted">• Decision-maker titles</li>
+                        </ul>
+                    </div>
+                    <div class="fade-in">
+                        <h3>Lead Sourcing</h3>
+                        <p class="text-muted" style="margin-bottom: 1rem;">We find and verify decision-makers in your target companies using:</p>
+                        <ul class="space-y-2">
+                            <li class="text-muted">• Intent data and company signals</li>
+                            <li class="text-muted">• Email verification</li>
+                            <li class="text-muted">• LinkedIn research</li>
+                            <li class="text-muted">• Custom lead lists</li>
+                        </ul>
+                    </div>
+                    <div class="fade-in">
+                        <h3>Email Setup</h3>
+                        <p class="text-muted" style="margin-bottom: 1rem;">We build and optimize your outbound sequences:</p>
+                        <ul class="space-y-2">
+                            <li class="text-muted">• Copywriting tailored to your ICP</li>
+                            <li class="text-muted">• Multi-step sequences</li>
+                            <li class="text-muted">• A/B testing and optimization</li>
+                            <li class="text-muted">• Deliverability optimization</li>
+                        </ul>
+                    </div>
+                    <div class="fade-in">
+                        <h3>Campaign Management</h3>
+                        <p class="text-muted" style="margin-bottom: 1rem;">We launch and manage the full campaign:</p>
+                        <ul class="space-y-2">
+                            <li class="text-muted">• Campaign execution</li>
+                            <li class="text-muted">• Response monitoring</li>
+                            <li class="text-muted">• Lead qualification</li>
+                            <li class="text-muted">• Performance reporting</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <h2 style="font-size: 1.75rem; margin-bottom: 3rem;">What You Handle</h2>
+                <div class="max-w-2xl">
+                    <p class="text-muted" style="margin-bottom: 2rem;">You focus on what you're best at. We handle the outbound engine, you handle the relationships:</p>
+                    <ul class="space-y-4">
+                        <li class="flex gap-4 items-start">
+                            <span class="text-primary font-bold flex-shrink-0" style="font-size: 1.25rem;">→</span>
+                            <span><strong>Sales conversations:</strong> When prospects respond, you take the call and build the relationship.</span>
+                        </li>
+                        <li class="flex gap-4 items-start">
+                            <span class="text-primary font-bold flex-shrink-0" style="font-size: 1.25rem;">→</span>
+                            <span><strong>Closing deals:</strong> You handle the entire sales process and close the deal.</span>
+                        </li>
+                        <li class="flex gap-4 items-start">
+                            <span class="text-primary font-bold flex-shrink-0" style="font-size: 1.25rem;">→</span>
+                            <span><strong>Delivery:</strong> You deliver the service or product. We stay in the background.</span>
+                        </li>
+                        <li class="flex gap-4 items-start">
+                            <span class="text-primary font-bold flex-shrink-0" style="font-size: 1.25rem;">→</span>
+                            <span><strong>Feedback:</strong> You tell us what's working and what isn't. We optimize accordingly.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- About Section -->
+        <section id="about">
+            <div class="container">
+                <div class="grid grid-2 items-center">
+                    <div class="fade-in">
+                        <h2 style="margin-bottom: 1.5rem;">StruceFlow is led by Jayaditya Solanki.</h2>
+                        <p class="text-muted" style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 1.5rem;">We focus specifically on CRM agencies and build outbound systems designed to create consistent pipeline without adding internal headcount.</p>
+                        <p class="text-muted" style="font-size: 1.125rem; line-height: 1.8;">Founder-led. Hands-on. Direct execution.</p>
+                    </div>
+                    <div class="fade-in">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 500'%3E%3Crect fill='%23E5E7EB' width='400' height='500'/%3E%3Ctext x='50%25' y='50%25' font-size='24' fill='%236B7280' text-anchor='middle' dominant-baseline='middle'%3EFounder Image%3C/text%3E%3C/svg%3E" alt="Jayaditya Solanki" class="founder-img" style="width: 100%; max-width: 400px;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="container">
+                <h2>Get in Touch</h2>
+                <p class="text-muted max-w-2xl" style="margin-bottom: 3rem;">Have questions? Want to learn more about how we can help your agency? Reach out directly.</p>
+
+                <div class="grid grid-2">
+                    <div class="fade-in">
+                        <h3>Direct Contact</h3>
+                        <div style="margin-bottom: 3rem;">
+                            <h4>Email</h4>
+                            <a href="mailto:jay@struceflow.com" style="font-weight: 600; font-size: 1.125rem;">jay@struceflow.com</a>
+                            <p class="text-muted" style="margin-top: 0.5rem;">I read every email and respond within 24 hours.</p>
+                        </div>
+                        <div>
+                            <h4>What to Include</h4>
+                            <ul class="space-y-3">
+                                <li class="text-muted">• Your agency name</li>
+                                <li class="text-muted">• Current lead sources</li>
+                                <li class="text-muted">• Average deal size</li>
+                                <li class="text-muted">• Your biggest pipeline challenge</li>
+                                <li class="text-muted">• Any specific questions</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="fade-in">
+                        <h3>Quick Links</h3>
+                        <div class="card border" style="margin-bottom: 1.5rem;">
+                            <h4>Want a Custom Breakdown?</h4>
+                            <p class="text-muted" style="margin-bottom: 1rem;">Fill out our form and we'll send you a Loom showing exactly how outbound could work for your agency.</p>
+                            <a href="#form" style="font-weight: 600;">Get Your Breakdown →</a>
+                        </div>
+                        <div class="card border">
+                            <h4>Learn More</h4>
+                            <p class="text-muted" style="margin-bottom: 1rem;">Check out our Services page to understand exactly what we handle and what you handle.</p>
+                            <a href="#services" style="font-weight: 600;">View Services →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container py-20">
+            <div class="footer-grid">
+                <div>
+                    <h4>StruceFlow</h4>
+                    <p class="text-muted" style="font-size: 0.875rem;">Outbound email agency for CRM agencies. Predictable conversations, guaranteed.</p>
+                </div>
+                <div>
+                    <h4>Product</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#services" class="text-muted" style="font-size: 0.875rem;">Services</a></li>
+                        <li><a href="#form" class="text-muted" style="font-size: 0.875rem;">Get Breakdown</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="text-muted" style="font-size: 0.875rem;">About</a></li>
+                        <li><a href="#contact" class="text-muted" style="font-size: 0.875rem;">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <p class="text-muted" style="font-size: 0.875rem;">
+                        <a href="mailto:jay@struceflow.com">jay@struceflow.com</a>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-divider">
+                <p class="text-muted" style="font-size: 0.875rem;">© 2026 StruceFlow. Predictable outbound conversations for CRM agencies.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Minimal JS for form handling and notifications -->
+    <script>
+        // Toast notification utility
+        function showToast(message, type = 'success') {
+            const toast = document.createElement('div');
+            toast.className = 'toast' + (type === 'error' ? ' error' : '');
+            toast.textContent = message;
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.style.animation = 'slideOut 0.3s ease-out forwards';
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+
+        // Form submission handler
+        document.getElementById('breakdownForm').addEventListener('submit', function(e) {
+            const formData = new FormData(this);
+            if (!formData.get('name') || !formData.get('agencyName') || !formData.get('email')) {
+                e.preventDefault();
+                showToast('Please fill in all required fields', 'error');
+                return;
+            }
+            showToast('Thanks! We will send your custom breakdown to ' + formData.get('email'));
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
