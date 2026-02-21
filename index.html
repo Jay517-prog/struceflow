@@ -3,9 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="StruceFlow: Outbound email agency helping CRM agencies generate predictable conversations. 10+ interested conversations in 30 days or full refund.">
+    <meta name="description" content="StruceFlow: Outbound email system for B2B SaaS companies to generate predictable conversations. 10+ interested conversations in 30 days or full refund.">
     <meta name="theme-color" content="#FFFFFF">
-    <title>StruceFlow | Outbound Email for CRM Agencies</title>
+    <title>StruceFlow | Outbound Email for B2B SaaS</title>
+    
+    <!-- Favicon / Logo in Browser Tab -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="favicon.png">
     <style>
         * {
             margin: 0;
@@ -498,7 +503,6 @@
             background-color: #10B981;
             color: #FFFFFF;
             border-radius: 0.375rem;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
             animation: slideIn 0.3s ease-out;
             z-index: 1000;
         }
@@ -562,7 +566,7 @@
             <div class="container">
                 <div class="grid grid-2 items-center">
                     <div class="fade-in" style="grid-column: 1 / -1;">
-                        <h1>Predictable Outbound Conversations for CRM Agencies</h1>
+                        <h1>Predictable Pipeline for B2B SaaS Companies</h1>
                         <p class="text-muted" style="font-size: 1.125rem; margin-bottom: 2rem; line-height: 1.8;">We build outbound email systems that generate 10+ interested conversations in 30 days.<br><br>No fluff. No SDR hiring. Just qualified prospects in your inbox.</p>
                         <a href="#form" class="btn">Get Your Custom Breakdown</a>
                     </div>
@@ -576,9 +580,9 @@
         <section>
             <div class="container">
                 <div class="max-w-2xl">
-                    <p class="text-muted" style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 1.5rem;">CRM agencies are great at delivering for clients — but their own pipeline often depends too heavily on referrals.</p>
-                    <p class="text-muted" style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 1.5rem;">That creates inconsistent revenue and constant pressure to find the next deal.</p>
-                    <p class="text-muted" style="font-size: 1.125rem; line-height: 1.8;">Outbound works — but setting it up properly takes time most agencies don't have.</p>
+                    <p class="text-muted" style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 1.5rem;">B2B SaaS companies are great at building product — but their own pipeline often depends too heavily on referrals and inbound.</p>
+                    <p class="text-muted" style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 1.5rem;">That creates inconsistent revenue and constant pressure to find the next customer.</p>
+                    <p class="text-muted" style="font-size: 1.125rem; line-height: 1.8;">Outbound works — but setting it up properly takes time most teams don't have.</p>
                 </div>
             </div>
         </section>
@@ -593,7 +597,7 @@
                     <ul class="space-y-3">
                         <li class="flex gap-4 items-start">
                             <span class="text-primary font-bold flex-shrink-0" style="font-size: 1.25rem;">•</span>
-                            <span class="text-muted">Define your ideal client profile</span>
+                            <span class="text-muted">Define your ideal customer profile</span>
                         </li>
                         <li class="flex gap-4 items-start">
                             <span class="text-primary font-bold flex-shrink-0" style="font-size: 1.25rem;">•</span>
@@ -625,7 +629,7 @@
             <div class="container">
                 <div class="max-w-2xl">
                     <h2 style="margin-bottom: 1.5rem;">10 interested conversations in 30 days — or full refund.</h2>
-                    <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 1.5rem;">An "interested conversation" means a qualified prospect who replies expressing intent to learn more about your service.</p>
+                    <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 1.5rem;">An "interested conversation" means a qualified prospect who replies expressing intent to learn more about your product.</p>
                     <p style="font-size: 1.125rem; line-height: 1.8;">Simple. Clear. No inflated metrics.</p>
                 </div>
             </div>
@@ -638,9 +642,9 @@
             <div class="container">
                 <div class="max-w-2xl">
                     <h2>Get Your Custom Outbound Breakdown</h2>
-                    <p class="text-muted" style="margin-bottom: 3rem;">Submit your details and we'll send a short Loom showing exactly how outbound could work for your agency.</p>
+                    <p class="text-muted" style="margin-bottom: 3rem;">Submit your details and we'll send a short Loom showing exactly how outbound could work for your company.</p>
 
-                    <form action="https://formspree.io/f/xreaglbo" method="POST">
+                    <form id="breakdownForm" action="https://formspree.io/f/xreaglbo" method="POST">
                         
                         <!-- Form is configured for Netlify Forms. Submissions are automatically captured and emailed to your account. -->
 
@@ -650,13 +654,13 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="agencyName">Agency Name *</label>
-                            <input type="text" id="agencyName" name="agencyName" placeholder="Your agency name" required>
+                            <label for="companyName">Company Name *</label>
+                            <input type="text" id="companyName" name="companyName" placeholder="Your company name" required>
                         </div>
 
                         <div class="form-group">
                             <label for="website">Website</label>
-                            <input type="text" id="website" name="website" placeholder="https://youragency.com">
+                            <input type="text" id="website" name="website" placeholder="https://yourcompany.com">
                         </div>
 
                         <div class="form-group">
@@ -700,13 +704,13 @@
         <section id="services">
             <div class="container">
                 <h2>What We Do</h2>
-                <p class="text-muted max-w-2xl" style="margin-bottom: 3rem;">We handle the entire outbound email engine. You focus on what you do best: closing deals and delivering results for your clients.</p>
+                <p class="text-muted max-w-2xl" style="margin-bottom: 3rem;">We handle the entire outbound email engine. You focus on what you do best: closing deals and delivering results for your customers.</p>
 
                 <h2 style="font-size: 1.75rem; margin-bottom: 3rem;">What We Handle</h2>
                 <div class="grid grid-2">
                     <div class="fade-in">
                         <h3>ICP Definition</h3>
-                        <p class="text-muted" style="margin-bottom: 1rem;">We analyze your best clients to build a detailed ideal customer profile. We identify:</p>
+                        <p class="text-muted" style="margin-bottom: 1rem;">We analyze your best customers to build a detailed ideal customer profile. We identify:</p>
                         <ul class="space-y-2">
                             <li class="text-muted">• Company size and industry</li>
                             <li class="text-muted">• Key pain points</li>
@@ -762,7 +766,7 @@
                         </li>
                         <li class="flex gap-4 items-start">
                             <span class="text-primary font-bold flex-shrink-0" style="font-size: 1.25rem;">→</span>
-                            <span><strong>Delivery:</strong> You deliver the service or product. We stay in the background.</span>
+                            <span><strong>Delivery:</strong> You deliver the product or service. We stay in the background.</span>
                         </li>
                         <li class="flex gap-4 items-start">
                             <span class="text-primary font-bold flex-shrink-0" style="font-size: 1.25rem;">→</span>
@@ -781,7 +785,7 @@
                 <div class="grid grid-2 items-center">
                     <div class="fade-in">
                         <h2 style="margin-bottom: 1.5rem;">StruceFlow is led by Jayaditya Solanki.</h2>
-                        <p class="text-muted" style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 1.5rem;">We focus specifically on CRM agencies and build outbound systems designed to create consistent pipeline without adding internal headcount.</p>
+                        <p class="text-muted" style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 1.5rem;">We focus specifically on B2B SaaS companies and build outbound systems designed to create consistent pipeline without adding internal headcount.</p>
                         <p class="text-muted" style="font-size: 1.125rem; line-height: 1.8;">Founder-led. Hands-on. Direct execution.</p>
                     </div>
                     <div class="fade-in">
@@ -797,7 +801,7 @@
         <section id="contact">
             <div class="container">
                 <h2>Get in Touch</h2>
-                <p class="text-muted max-w-2xl" style="margin-bottom: 3rem;">Have questions? Want to learn more about how we can help your agency? Reach out directly.</p>
+                <p class="text-muted max-w-2xl" style="margin-bottom: 3rem;">Have questions? Want to learn more about how we can help your company? Reach out directly.</p>
 
                 <div class="grid grid-2">
                     <div class="fade-in">
@@ -810,7 +814,7 @@
                         <div>
                             <h4>What to Include</h4>
                             <ul class="space-y-3">
-                                <li class="text-muted">• Your agency name</li>
+                                <li class="text-muted">• Your company name</li>
                                 <li class="text-muted">• Current lead sources</li>
                                 <li class="text-muted">• Average deal size</li>
                                 <li class="text-muted">• Your biggest pipeline challenge</li>
@@ -823,7 +827,7 @@
                         <h3>Quick Links</h3>
                         <div class="card border" style="margin-bottom: 1.5rem;">
                             <h4>Want a Custom Breakdown?</h4>
-                            <p class="text-muted" style="margin-bottom: 1rem;">Fill out our form and we'll send you a Loom showing exactly how outbound could work for your agency.</p>
+                            <p class="text-muted" style="margin-bottom: 1rem;">Fill out our form and we'll send you a Loom showing exactly how outbound could work for your company.</p>
                             <a href="#form" style="font-weight: 600;">Get Your Breakdown →</a>
                         </div>
                         <div class="card border">
@@ -843,7 +847,7 @@
             <div class="footer-grid">
                 <div>
                     <h4>StruceFlow</h4>
-                    <p class="text-muted" style="font-size: 0.875rem;">Outbound email agency for CRM agencies. Predictable conversations, guaranteed.</p>
+                    <p class="text-muted" style="font-size: 0.875rem;">Outbound email system for B2B SaaS companies. Predictable conversations, guaranteed.</p>
                 </div>
                 <div>
                     <h4>Product</h4>
@@ -867,7 +871,7 @@
                 </div>
             </div>
             <div class="footer-divider">
-                <p class="text-muted" style="font-size: 0.875rem;">© 2026 StruceFlow. Predictable outbound conversations for CRM agencies.</p>
+                <p class="text-muted" style="font-size: 0.875rem;">© 2026 StruceFlow. Predictable outbound conversations for B2B SaaS companies.</p>
             </div>
         </div>
     </footer>
@@ -890,7 +894,7 @@
         // Form submission handler
         document.getElementById('breakdownForm').addEventListener('submit', function(e) {
             const formData = new FormData(this);
-            if (!formData.get('name') || !formData.get('agencyName') || !formData.get('email')) {
+            if (!formData.get('name') || !formData.get('companyName') || !formData.get('email')) {
                 e.preventDefault();
                 showToast('Please fill in all required fields', 'error');
                 return;
